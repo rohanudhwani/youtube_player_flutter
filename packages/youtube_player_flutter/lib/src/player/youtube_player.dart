@@ -380,7 +380,13 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                                 PlaybackSpeedButton(
                                   style: widget.playbackSpeedPopStyle,
                                 ),
-                                const FullScreenButton(),
+                                if (widget
+                                    .controller.flags.showFullscreenButton)
+                                  const FullScreenButton()
+                                else
+                                  const SizedBox(
+                                    width: 7,
+                                  )
                               ],
                         ),
                       ),

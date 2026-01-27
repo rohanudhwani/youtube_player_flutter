@@ -74,6 +74,11 @@ class YoutubePlayerFlags {
   /// as it can cause framerate drops on animations in Android 9 and lower (see [Hybrid-Composition#performance](https://github.com/flutter/flutter/wiki/Hybrid-Composition#performance)).
   final bool useHybridComposition;
 
+  /// Defines whether to show or hide the fullscreen button.
+  ///
+  /// Default is true.
+  final bool showFullscreenButton;
+
   /// Defines whether to show or hide the fullscreen button in the live player.
   ///
   /// Default is true.
@@ -95,6 +100,7 @@ class YoutubePlayerFlags {
     this.startAt = 0,
     this.endAt,
     this.useHybridComposition = true,
+    this.showFullscreenButton = true,
     this.showLiveFullscreenButton = true,
   });
 
@@ -115,6 +121,7 @@ class YoutubePlayerFlags {
     int? endAt,
     bool? controlsVisibleAtStart,
     bool? useHybridComposition,
+    bool? showFullscreenButton,
     bool? showLiveFullscreenButton,
   }) {
     return YoutubePlayerFlags(
@@ -133,6 +140,7 @@ class YoutubePlayerFlags {
       controlsVisibleAtStart:
           controlsVisibleAtStart ?? this.controlsVisibleAtStart,
       useHybridComposition: useHybridComposition ?? this.useHybridComposition,
+      showFullscreenButton: showFullscreenButton ?? this.showFullscreenButton,
       showLiveFullscreenButton:
           showLiveFullscreenButton ?? this.showLiveFullscreenButton,
     );
